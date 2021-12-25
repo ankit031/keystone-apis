@@ -1,0 +1,2889 @@
+input UserImageRelateToOneInput {
+  create: UserImageCreateInput
+  connect: UserImageWhereUniqueInput
+  disconnect: UserImageWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input LandHoldingRelateToOneInput {
+  create: LandHoldingCreateInput
+  connect: LandHoldingWhereUniqueInput
+  disconnect: LandHoldingWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input CropRelateToOneInput {
+  create: CropCreateInput
+  connect: CropWhereUniqueInput
+  disconnect: CropWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input FertPestRelateToOneInput {
+  create: FertPestCreateInput
+  connect: FertPestWhereUniqueInput
+  disconnect: FertPestWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input ProducePlanRelateToOneInput {
+  create: ProducePlanCreateInput
+  connect: ProducePlanWhereUniqueInput
+  disconnect: ProducePlanWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input MarketingRelateToOneInput {
+  create: MarketingCreateInput
+  connect: MarketingWhereUniqueInput
+  disconnect: MarketingWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+input RoleRelateToOneInput {
+  create: RoleCreateInput
+  connect: RoleWhereUniqueInput
+  disconnect: RoleWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type User {
+  id: ID!
+  name: String
+  email: String
+  age: Int
+  gender: String
+  state: String
+  district: String
+  block: String
+  panchayat: String
+  village: String
+  phone: String
+  phone_verified: String
+  password_is_set: Boolean
+  photo: UserImage
+  landHolding: LandHolding
+  crop: Crop
+  fertPest: FertPest
+  producePlan: ProducePlan
+  marketing: Marketing
+  role: Role
+  passwordResetToken_is_set: Boolean
+  passwordResetIssuedAt: String
+  passwordResetRedeemedAt: String
+  magicAuthToken_is_set: Boolean
+  magicAuthIssuedAt: String
+  magicAuthRedeemedAt: String
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput]
+  OR: [UserWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  email: String
+  email_not: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  email_i: String
+  email_not_i: String
+  email_contains_i: String
+  email_not_contains_i: String
+  email_starts_with_i: String
+  email_not_starts_with_i: String
+  email_ends_with_i: String
+  email_not_ends_with_i: String
+  email_in: [String]
+  email_not_in: [String]
+  age: Int
+  age_not: Int
+  age_lt: Int
+  age_lte: Int
+  age_gt: Int
+  age_gte: Int
+  age_in: [Int]
+  age_not_in: [Int]
+  gender: String
+  gender_not: String
+  gender_contains: String
+  gender_not_contains: String
+  gender_starts_with: String
+  gender_not_starts_with: String
+  gender_ends_with: String
+  gender_not_ends_with: String
+  gender_i: String
+  gender_not_i: String
+  gender_contains_i: String
+  gender_not_contains_i: String
+  gender_starts_with_i: String
+  gender_not_starts_with_i: String
+  gender_ends_with_i: String
+  gender_not_ends_with_i: String
+  gender_in: [String]
+  gender_not_in: [String]
+  state: String
+  state_not: String
+  state_contains: String
+  state_not_contains: String
+  state_starts_with: String
+  state_not_starts_with: String
+  state_ends_with: String
+  state_not_ends_with: String
+  state_i: String
+  state_not_i: String
+  state_contains_i: String
+  state_not_contains_i: String
+  state_starts_with_i: String
+  state_not_starts_with_i: String
+  state_ends_with_i: String
+  state_not_ends_with_i: String
+  state_in: [String]
+  state_not_in: [String]
+  district: String
+  district_not: String
+  district_contains: String
+  district_not_contains: String
+  district_starts_with: String
+  district_not_starts_with: String
+  district_ends_with: String
+  district_not_ends_with: String
+  district_i: String
+  district_not_i: String
+  district_contains_i: String
+  district_not_contains_i: String
+  district_starts_with_i: String
+  district_not_starts_with_i: String
+  district_ends_with_i: String
+  district_not_ends_with_i: String
+  district_in: [String]
+  district_not_in: [String]
+  block: String
+  block_not: String
+  block_contains: String
+  block_not_contains: String
+  block_starts_with: String
+  block_not_starts_with: String
+  block_ends_with: String
+  block_not_ends_with: String
+  block_i: String
+  block_not_i: String
+  block_contains_i: String
+  block_not_contains_i: String
+  block_starts_with_i: String
+  block_not_starts_with_i: String
+  block_ends_with_i: String
+  block_not_ends_with_i: String
+  block_in: [String]
+  block_not_in: [String]
+  panchayat: String
+  panchayat_not: String
+  panchayat_contains: String
+  panchayat_not_contains: String
+  panchayat_starts_with: String
+  panchayat_not_starts_with: String
+  panchayat_ends_with: String
+  panchayat_not_ends_with: String
+  panchayat_i: String
+  panchayat_not_i: String
+  panchayat_contains_i: String
+  panchayat_not_contains_i: String
+  panchayat_starts_with_i: String
+  panchayat_not_starts_with_i: String
+  panchayat_ends_with_i: String
+  panchayat_not_ends_with_i: String
+  panchayat_in: [String]
+  panchayat_not_in: [String]
+  village: String
+  village_not: String
+  village_contains: String
+  village_not_contains: String
+  village_starts_with: String
+  village_not_starts_with: String
+  village_ends_with: String
+  village_not_ends_with: String
+  village_i: String
+  village_not_i: String
+  village_contains_i: String
+  village_not_contains_i: String
+  village_starts_with_i: String
+  village_not_starts_with_i: String
+  village_ends_with_i: String
+  village_not_ends_with_i: String
+  village_in: [String]
+  village_not_in: [String]
+  phone: String
+  phone_not: String
+  phone_contains: String
+  phone_not_contains: String
+  phone_starts_with: String
+  phone_not_starts_with: String
+  phone_ends_with: String
+  phone_not_ends_with: String
+  phone_i: String
+  phone_not_i: String
+  phone_contains_i: String
+  phone_not_contains_i: String
+  phone_starts_with_i: String
+  phone_not_starts_with_i: String
+  phone_ends_with_i: String
+  phone_not_ends_with_i: String
+  phone_in: [String]
+  phone_not_in: [String]
+  phone_verified: String
+  phone_verified_not: String
+  phone_verified_contains: String
+  phone_verified_not_contains: String
+  phone_verified_starts_with: String
+  phone_verified_not_starts_with: String
+  phone_verified_ends_with: String
+  phone_verified_not_ends_with: String
+  phone_verified_i: String
+  phone_verified_not_i: String
+  phone_verified_contains_i: String
+  phone_verified_not_contains_i: String
+  phone_verified_starts_with_i: String
+  phone_verified_not_starts_with_i: String
+  phone_verified_ends_with_i: String
+  phone_verified_not_ends_with_i: String
+  phone_verified_in: [String]
+  phone_verified_not_in: [String]
+  password_is_set: Boolean
+  photo: UserImageWhereInput
+  photo_is_null: Boolean
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  fertPest: FertPestWhereInput
+  fertPest_is_null: Boolean
+  producePlan: ProducePlanWhereInput
+  producePlan_is_null: Boolean
+  marketing: MarketingWhereInput
+  marketing_is_null: Boolean
+  role: RoleWhereInput
+  role_is_null: Boolean
+  passwordResetToken_is_set: Boolean
+  passwordResetIssuedAt: String
+  passwordResetIssuedAt_not: String
+  passwordResetIssuedAt_lt: String
+  passwordResetIssuedAt_lte: String
+  passwordResetIssuedAt_gt: String
+  passwordResetIssuedAt_gte: String
+  passwordResetIssuedAt_in: [String]
+  passwordResetIssuedAt_not_in: [String]
+  passwordResetRedeemedAt: String
+  passwordResetRedeemedAt_not: String
+  passwordResetRedeemedAt_lt: String
+  passwordResetRedeemedAt_lte: String
+  passwordResetRedeemedAt_gt: String
+  passwordResetRedeemedAt_gte: String
+  passwordResetRedeemedAt_in: [String]
+  passwordResetRedeemedAt_not_in: [String]
+  magicAuthToken_is_set: Boolean
+  magicAuthIssuedAt: String
+  magicAuthIssuedAt_not: String
+  magicAuthIssuedAt_lt: String
+  magicAuthIssuedAt_lte: String
+  magicAuthIssuedAt_gt: String
+  magicAuthIssuedAt_gte: String
+  magicAuthIssuedAt_in: [String]
+  magicAuthIssuedAt_not_in: [String]
+  magicAuthRedeemedAt: String
+  magicAuthRedeemedAt_not: String
+  magicAuthRedeemedAt_lt: String
+  magicAuthRedeemedAt_lte: String
+  magicAuthRedeemedAt_gt: String
+  magicAuthRedeemedAt_gte: String
+  magicAuthRedeemedAt_in: [String]
+  magicAuthRedeemedAt_not_in: [String]
+}
+
+input UserWhereUniqueInput {
+  id: ID!
+}
+
+enum SortUsersBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  email_ASC
+  email_DESC
+  age_ASC
+  age_DESC
+  gender_ASC
+  gender_DESC
+  state_ASC
+  state_DESC
+  district_ASC
+  district_DESC
+  block_ASC
+  block_DESC
+  panchayat_ASC
+  panchayat_DESC
+  village_ASC
+  village_DESC
+  phone_ASC
+  phone_DESC
+  phone_verified_ASC
+  phone_verified_DESC
+  photo_ASC
+  photo_DESC
+  landHolding_ASC
+  landHolding_DESC
+  crop_ASC
+  crop_DESC
+  fertPest_ASC
+  fertPest_DESC
+  producePlan_ASC
+  producePlan_DESC
+  marketing_ASC
+  marketing_DESC
+  role_ASC
+  role_DESC
+  passwordResetIssuedAt_ASC
+  passwordResetIssuedAt_DESC
+  passwordResetRedeemedAt_ASC
+  passwordResetRedeemedAt_DESC
+  magicAuthIssuedAt_ASC
+  magicAuthIssuedAt_DESC
+  magicAuthRedeemedAt_ASC
+  magicAuthRedeemedAt_DESC
+}
+
+input UserUpdateInput {
+  name: String
+  email: String
+  age: Int
+  gender: String
+  state: String
+  district: String
+  block: String
+  panchayat: String
+  village: String
+  phone: String
+  phone_verified: String
+  password: String
+  photo: UserImageRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+  role: RoleRelateToOneInput
+  passwordResetToken: String
+  passwordResetIssuedAt: String
+  passwordResetRedeemedAt: String
+  magicAuthToken: String
+  magicAuthIssuedAt: String
+  magicAuthRedeemedAt: String
+}
+
+input UsersUpdateInput {
+  id: ID!
+  data: UserUpdateInput
+}
+
+input UserCreateInput {
+  name: String
+  email: String
+  age: Int
+  gender: String
+  state: String
+  district: String
+  block: String
+  panchayat: String
+  village: String
+  phone: String
+  phone_verified: String
+  password: String
+  photo: UserImageRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+  role: RoleRelateToOneInput
+  passwordResetToken: String
+  passwordResetIssuedAt: String
+  passwordResetRedeemedAt: String
+  magicAuthToken: String
+  magicAuthIssuedAt: String
+  magicAuthRedeemedAt: String
+}
+
+input UsersCreateInput {
+  data: UserCreateInput
+}
+
+input ProductImageRelateToOneInput {
+  create: ProductImageCreateInput
+  connect: ProductImageWhereUniqueInput
+  disconnect: ProductImageWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type Product {
+  id: ID!
+  name: String
+  description: String
+  photo: ProductImage
+  status: String
+  price: Int
+}
+
+input ProductWhereInput {
+  AND: [ProductWhereInput]
+  OR: [ProductWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  description: String
+  description_not: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  description_i: String
+  description_not_i: String
+  description_contains_i: String
+  description_not_contains_i: String
+  description_starts_with_i: String
+  description_not_starts_with_i: String
+  description_ends_with_i: String
+  description_not_ends_with_i: String
+  description_in: [String]
+  description_not_in: [String]
+  photo: ProductImageWhereInput
+  photo_is_null: Boolean
+  status: String
+  status_not: String
+  status_contains: String
+  status_not_contains: String
+  status_starts_with: String
+  status_not_starts_with: String
+  status_ends_with: String
+  status_not_ends_with: String
+  status_i: String
+  status_not_i: String
+  status_contains_i: String
+  status_not_contains_i: String
+  status_starts_with_i: String
+  status_not_starts_with_i: String
+  status_ends_with_i: String
+  status_not_ends_with_i: String
+  status_in: [String]
+  status_not_in: [String]
+  price: Int
+  price_not: Int
+  price_lt: Int
+  price_lte: Int
+  price_gt: Int
+  price_gte: Int
+  price_in: [Int]
+  price_not_in: [Int]
+}
+
+input ProductWhereUniqueInput {
+  id: ID!
+}
+
+enum SortProductsBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  description_ASC
+  description_DESC
+  photo_ASC
+  photo_DESC
+  status_ASC
+  status_DESC
+  price_ASC
+  price_DESC
+}
+
+input ProductUpdateInput {
+  name: String
+  description: String
+  photo: ProductImageRelateToOneInput
+  status: String
+  price: Int
+}
+
+input ProductsUpdateInput {
+  id: ID!
+  data: ProductUpdateInput
+}
+
+input ProductCreateInput {
+  name: String
+  description: String
+  photo: ProductImageRelateToOneInput
+  status: String
+  price: Int
+}
+
+input ProductsCreateInput {
+  data: ProductCreateInput
+}
+
+type CloudinaryImage_File {
+  id: ID
+  path: String
+  filename: String
+  originalFilename: String
+  mimetype: String
+  encoding: String
+  publicUrl: String
+  publicUrlTransformed(transformation: CloudinaryImageFormat): String
+}
+
+"""
+Mirrors the formatting options [Cloudinary provides](https://cloudinary.com/documentation/image_transformation_reference).
+All options are strings as they ultimately end up in a URL.
+"""
+input CloudinaryImageFormat {
+  """ Rewrites the filename to be this pretty string. Do not include `/` or `.` 
+  """
+  prettyName: String
+  width: String
+  height: String
+  crop: String
+  aspect_ratio: String
+  gravity: String
+  zoom: String
+  x: String
+  y: String
+  format: String
+  fetch_format: String
+  quality: String
+  radius: String
+  angle: String
+  effect: String
+  opacity: String
+  border: String
+  background: String
+  overlay: String
+  underlay: String
+  default_image: String
+  delay: String
+  color: String
+  color_space: String
+  dpr: String
+  page: String
+  density: String
+  flags: String
+  transformation: String
+}
+
+input ProductRelateToOneInput {
+  create: ProductCreateInput
+  connect: ProductWhereUniqueInput
+  disconnect: ProductWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type ProductImage {
+  id: ID!
+  image: CloudinaryImage_File
+  altText: String
+  product: Product
+}
+
+input ProductImageWhereInput {
+  AND: [ProductImageWhereInput]
+  OR: [ProductImageWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  image: String
+  image_not: String
+  image_in: [String]
+  image_not_in: [String]
+  altText: String
+  altText_not: String
+  altText_contains: String
+  altText_not_contains: String
+  altText_starts_with: String
+  altText_not_starts_with: String
+  altText_ends_with: String
+  altText_not_ends_with: String
+  altText_i: String
+  altText_not_i: String
+  altText_contains_i: String
+  altText_not_contains_i: String
+  altText_starts_with_i: String
+  altText_not_starts_with_i: String
+  altText_ends_with_i: String
+  altText_not_ends_with_i: String
+  altText_in: [String]
+  altText_not_in: [String]
+  product: ProductWhereInput
+  product_is_null: Boolean
+}
+
+input ProductImageWhereUniqueInput {
+  id: ID!
+}
+
+enum SortProductImagesBy {
+  id_ASC
+  id_DESC
+  altText_ASC
+  altText_DESC
+  product_ASC
+  product_DESC
+}
+
+input ProductImageUpdateInput {
+  image: Upload
+  altText: String
+  product: ProductRelateToOneInput
+}
+
+input ProductImagesUpdateInput {
+  id: ID!
+  data: ProductImageUpdateInput
+}
+
+input ProductImageCreateInput {
+  image: Upload
+  altText: String
+  product: ProductRelateToOneInput
+}
+
+input ProductImagesCreateInput {
+  data: ProductImageCreateInput
+}
+
+""" A keystone list """
+type CartItem {
+  id: ID!
+  quantity: Int
+  product: Product
+}
+
+input CartItemWhereInput {
+  AND: [CartItemWhereInput]
+  OR: [CartItemWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  quantity: Int
+  quantity_not: Int
+  quantity_lt: Int
+  quantity_lte: Int
+  quantity_gt: Int
+  quantity_gte: Int
+  quantity_in: [Int]
+  quantity_not_in: [Int]
+  product: ProductWhereInput
+  product_is_null: Boolean
+}
+
+input CartItemWhereUniqueInput {
+  id: ID!
+}
+
+enum SortCartItemsBy {
+  id_ASC
+  id_DESC
+  quantity_ASC
+  quantity_DESC
+  product_ASC
+  product_DESC
+}
+
+input CartItemUpdateInput {
+  quantity: Int
+  product: ProductRelateToOneInput
+}
+
+input CartItemsUpdateInput {
+  id: ID!
+  data: CartItemUpdateInput
+}
+
+input CartItemCreateInput {
+  quantity: Int
+  product: ProductRelateToOneInput
+}
+
+input CartItemsCreateInput {
+  data: CartItemCreateInput
+}
+
+input OrderRelateToOneInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
+  disconnect: OrderWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type OrderItem {
+  id: ID!
+  name: String
+  description: String
+  photo: ProductImage
+  price: Int
+  quantity: Int
+  order: Order
+}
+
+input OrderItemWhereInput {
+  AND: [OrderItemWhereInput]
+  OR: [OrderItemWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  description: String
+  description_not: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  description_i: String
+  description_not_i: String
+  description_contains_i: String
+  description_not_contains_i: String
+  description_starts_with_i: String
+  description_not_starts_with_i: String
+  description_ends_with_i: String
+  description_not_ends_with_i: String
+  description_in: [String]
+  description_not_in: [String]
+  photo: ProductImageWhereInput
+  photo_is_null: Boolean
+  price: Int
+  price_not: Int
+  price_lt: Int
+  price_lte: Int
+  price_gt: Int
+  price_gte: Int
+  price_in: [Int]
+  price_not_in: [Int]
+  quantity: Int
+  quantity_not: Int
+  quantity_lt: Int
+  quantity_lte: Int
+  quantity_gt: Int
+  quantity_gte: Int
+  quantity_in: [Int]
+  quantity_not_in: [Int]
+  order: OrderWhereInput
+  order_is_null: Boolean
+}
+
+input OrderItemWhereUniqueInput {
+  id: ID!
+}
+
+enum SortOrderItemsBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  description_ASC
+  description_DESC
+  photo_ASC
+  photo_DESC
+  price_ASC
+  price_DESC
+  quantity_ASC
+  quantity_DESC
+  order_ASC
+  order_DESC
+}
+
+input OrderItemUpdateInput {
+  name: String
+  description: String
+  photo: ProductImageRelateToOneInput
+  price: Int
+  quantity: Int
+  order: OrderRelateToOneInput
+}
+
+input OrderItemsUpdateInput {
+  id: ID!
+  data: OrderItemUpdateInput
+}
+
+input OrderItemCreateInput {
+  name: String
+  description: String
+  photo: ProductImageRelateToOneInput
+  price: Int
+  quantity: Int
+  order: OrderRelateToOneInput
+}
+
+input OrderItemsCreateInput {
+  data: OrderItemCreateInput
+}
+
+input OrderItemRelateToManyInput {
+  create: [OrderItemCreateInput]
+  connect: [OrderItemWhereUniqueInput]
+  disconnect: [OrderItemWhereUniqueInput]
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type Order {
+  id: ID!
+  label: String
+  total: Int
+  items(where: OrderItemWhereInput, search: String, sortBy: [SortOrderItemsBy!], orderBy: String, first: Int, skip: Int): [OrderItem!]!
+  _itemsMeta(where: OrderItemWhereInput, search: String, sortBy: [SortOrderItemsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+  charge: String
+}
+
+input OrderWhereInput {
+  AND: [OrderWhereInput]
+  OR: [OrderWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  total: Int
+  total_not: Int
+  total_lt: Int
+  total_lte: Int
+  total_gt: Int
+  total_gte: Int
+  total_in: [Int]
+  total_not_in: [Int]
+
+  """ condition must be true for all nodes """
+  items_every: OrderItemWhereInput
+
+  """ condition must be true for at least 1 node """
+  items_some: OrderItemWhereInput
+
+  """ condition must be false for all nodes """
+  items_none: OrderItemWhereInput
+  charge: String
+  charge_not: String
+  charge_contains: String
+  charge_not_contains: String
+  charge_starts_with: String
+  charge_not_starts_with: String
+  charge_ends_with: String
+  charge_not_ends_with: String
+  charge_i: String
+  charge_not_i: String
+  charge_contains_i: String
+  charge_not_contains_i: String
+  charge_starts_with_i: String
+  charge_not_starts_with_i: String
+  charge_ends_with_i: String
+  charge_not_ends_with_i: String
+  charge_in: [String]
+  charge_not_in: [String]
+}
+
+input OrderWhereUniqueInput {
+  id: ID!
+}
+
+enum SortOrdersBy {
+  id_ASC
+  id_DESC
+  total_ASC
+  total_DESC
+  items_ASC
+  items_DESC
+  charge_ASC
+  charge_DESC
+}
+
+input OrderUpdateInput {
+  total: Int
+  items: OrderItemRelateToManyInput
+  charge: String
+}
+
+input OrdersUpdateInput {
+  id: ID!
+  data: OrderUpdateInput
+}
+
+input OrderCreateInput {
+  total: Int
+  items: OrderItemRelateToManyInput
+  charge: String
+}
+
+input OrdersCreateInput {
+  data: OrderCreateInput
+}
+
+input UserRelateToManyInput {
+  create: [UserCreateInput]
+  connect: [UserWhereUniqueInput]
+  disconnect: [UserWhereUniqueInput]
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type Role {
+  id: ID!
+  name: String
+  canManageProducts: Boolean
+  canSeeOtherUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManageCart: Boolean
+  canManageOrders: Boolean
+  canManageCrops: Boolean
+  canManageLandHolding: Boolean
+  canManageUserImage: Boolean
+  canManageSeed: Boolean
+  canManageFertPest: Boolean
+  canManageProducePlan: Boolean
+  canManageMarketing: Boolean
+  assignedTo(where: UserWhereInput, search: String, sortBy: [SortUsersBy!], orderBy: String, first: Int, skip: Int): [User!]!
+  _assignedToMeta(where: UserWhereInput, search: String, sortBy: [SortUsersBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+}
+
+input RoleWhereInput {
+  AND: [RoleWhereInput]
+  OR: [RoleWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  canManageProducts: Boolean
+  canManageProducts_not: Boolean
+  canSeeOtherUsers: Boolean
+  canSeeOtherUsers_not: Boolean
+  canManageUsers: Boolean
+  canManageUsers_not: Boolean
+  canManageRoles: Boolean
+  canManageRoles_not: Boolean
+  canManageCart: Boolean
+  canManageCart_not: Boolean
+  canManageOrders: Boolean
+  canManageOrders_not: Boolean
+  canManageCrops: Boolean
+  canManageCrops_not: Boolean
+  canManageLandHolding: Boolean
+  canManageLandHolding_not: Boolean
+  canManageUserImage: Boolean
+  canManageUserImage_not: Boolean
+  canManageSeed: Boolean
+  canManageSeed_not: Boolean
+  canManageFertPest: Boolean
+  canManageFertPest_not: Boolean
+  canManageProducePlan: Boolean
+  canManageProducePlan_not: Boolean
+  canManageMarketing: Boolean
+  canManageMarketing_not: Boolean
+
+  """ condition must be true for all nodes """
+  assignedTo_every: UserWhereInput
+
+  """ condition must be true for at least 1 node """
+  assignedTo_some: UserWhereInput
+
+  """ condition must be false for all nodes """
+  assignedTo_none: UserWhereInput
+}
+
+input RoleWhereUniqueInput {
+  id: ID!
+}
+
+enum SortRolesBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  canManageProducts_ASC
+  canManageProducts_DESC
+  canSeeOtherUsers_ASC
+  canSeeOtherUsers_DESC
+  canManageUsers_ASC
+  canManageUsers_DESC
+  canManageRoles_ASC
+  canManageRoles_DESC
+  canManageCart_ASC
+  canManageCart_DESC
+  canManageOrders_ASC
+  canManageOrders_DESC
+  canManageCrops_ASC
+  canManageCrops_DESC
+  canManageLandHolding_ASC
+  canManageLandHolding_DESC
+  canManageUserImage_ASC
+  canManageUserImage_DESC
+  canManageSeed_ASC
+  canManageSeed_DESC
+  canManageFertPest_ASC
+  canManageFertPest_DESC
+  canManageProducePlan_ASC
+  canManageProducePlan_DESC
+  canManageMarketing_ASC
+  canManageMarketing_DESC
+  assignedTo_ASC
+  assignedTo_DESC
+}
+
+input RoleUpdateInput {
+  name: String
+  canManageProducts: Boolean
+  canSeeOtherUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManageCart: Boolean
+  canManageOrders: Boolean
+  canManageCrops: Boolean
+  canManageLandHolding: Boolean
+  canManageUserImage: Boolean
+  canManageSeed: Boolean
+  canManageFertPest: Boolean
+  canManageProducePlan: Boolean
+  canManageMarketing: Boolean
+  assignedTo: UserRelateToManyInput
+}
+
+input RolesUpdateInput {
+  id: ID!
+  data: RoleUpdateInput
+}
+
+input RoleCreateInput {
+  name: String
+  canManageProducts: Boolean
+  canSeeOtherUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManageCart: Boolean
+  canManageOrders: Boolean
+  canManageCrops: Boolean
+  canManageLandHolding: Boolean
+  canManageUserImage: Boolean
+  canManageSeed: Boolean
+  canManageFertPest: Boolean
+  canManageProducePlan: Boolean
+  canManageMarketing: Boolean
+  assignedTo: UserRelateToManyInput
+}
+
+input RolesCreateInput {
+  data: RoleCreateInput
+}
+
+input UserRelateToOneInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+  disconnect: UserWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type UserImage {
+  id: ID!
+  image: CloudinaryImage_File
+  altText: String
+  user: User
+}
+
+input UserImageWhereInput {
+  AND: [UserImageWhereInput]
+  OR: [UserImageWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  image: String
+  image_not: String
+  image_in: [String]
+  image_not_in: [String]
+  altText: String
+  altText_not: String
+  altText_contains: String
+  altText_not_contains: String
+  altText_starts_with: String
+  altText_not_starts_with: String
+  altText_ends_with: String
+  altText_not_ends_with: String
+  altText_i: String
+  altText_not_i: String
+  altText_contains_i: String
+  altText_not_contains_i: String
+  altText_starts_with_i: String
+  altText_not_starts_with_i: String
+  altText_ends_with_i: String
+  altText_not_ends_with_i: String
+  altText_in: [String]
+  altText_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+}
+
+input UserImageWhereUniqueInput {
+  id: ID!
+}
+
+enum SortUserImagesBy {
+  id_ASC
+  id_DESC
+  altText_ASC
+  altText_DESC
+  user_ASC
+  user_DESC
+}
+
+input UserImageUpdateInput {
+  image: Upload
+  altText: String
+  user: UserRelateToOneInput
+}
+
+input UserImagesUpdateInput {
+  id: ID!
+  data: UserImageUpdateInput
+}
+
+input UserImageCreateInput {
+  image: Upload
+  altText: String
+  user: UserRelateToOneInput
+}
+
+input UserImagesCreateInput {
+  data: UserImageCreateInput
+}
+
+input SeedRelateToOneInput {
+  create: SeedCreateInput
+  connect: SeedWhereUniqueInput
+  disconnect: SeedWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+""" A keystone list """
+type LandHolding {
+  id: ID!
+  land_acre_number: Int
+  land_acre_cultivable: Int
+  land_acre_irrigation: Int
+  land_irrigation_type: String
+  user: User
+  crop: Crop
+  seed: Seed
+  fertPest: FertPest
+  producePlan: ProducePlan
+  marketing: Marketing
+}
+
+input LandHoldingWhereInput {
+  AND: [LandHoldingWhereInput]
+  OR: [LandHoldingWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  land_acre_number: Int
+  land_acre_number_not: Int
+  land_acre_number_lt: Int
+  land_acre_number_lte: Int
+  land_acre_number_gt: Int
+  land_acre_number_gte: Int
+  land_acre_number_in: [Int]
+  land_acre_number_not_in: [Int]
+  land_acre_cultivable: Int
+  land_acre_cultivable_not: Int
+  land_acre_cultivable_lt: Int
+  land_acre_cultivable_lte: Int
+  land_acre_cultivable_gt: Int
+  land_acre_cultivable_gte: Int
+  land_acre_cultivable_in: [Int]
+  land_acre_cultivable_not_in: [Int]
+  land_acre_irrigation: Int
+  land_acre_irrigation_not: Int
+  land_acre_irrigation_lt: Int
+  land_acre_irrigation_lte: Int
+  land_acre_irrigation_gt: Int
+  land_acre_irrigation_gte: Int
+  land_acre_irrigation_in: [Int]
+  land_acre_irrigation_not_in: [Int]
+  land_irrigation_type: String
+  land_irrigation_type_not: String
+  land_irrigation_type_contains: String
+  land_irrigation_type_not_contains: String
+  land_irrigation_type_starts_with: String
+  land_irrigation_type_not_starts_with: String
+  land_irrigation_type_ends_with: String
+  land_irrigation_type_not_ends_with: String
+  land_irrigation_type_i: String
+  land_irrigation_type_not_i: String
+  land_irrigation_type_contains_i: String
+  land_irrigation_type_not_contains_i: String
+  land_irrigation_type_starts_with_i: String
+  land_irrigation_type_not_starts_with_i: String
+  land_irrigation_type_ends_with_i: String
+  land_irrigation_type_not_ends_with_i: String
+  land_irrigation_type_in: [String]
+  land_irrigation_type_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  seed: SeedWhereInput
+  seed_is_null: Boolean
+  fertPest: FertPestWhereInput
+  fertPest_is_null: Boolean
+  producePlan: ProducePlanWhereInput
+  producePlan_is_null: Boolean
+  marketing: MarketingWhereInput
+  marketing_is_null: Boolean
+}
+
+input LandHoldingWhereUniqueInput {
+  id: ID!
+}
+
+enum SortLandHoldingsBy {
+  id_ASC
+  id_DESC
+  land_acre_number_ASC
+  land_acre_number_DESC
+  land_acre_cultivable_ASC
+  land_acre_cultivable_DESC
+  land_acre_irrigation_ASC
+  land_acre_irrigation_DESC
+  land_irrigation_type_ASC
+  land_irrigation_type_DESC
+  user_ASC
+  user_DESC
+  crop_ASC
+  crop_DESC
+  seed_ASC
+  seed_DESC
+  fertPest_ASC
+  fertPest_DESC
+  producePlan_ASC
+  producePlan_DESC
+  marketing_ASC
+  marketing_DESC
+}
+
+input LandHoldingUpdateInput {
+  land_acre_number: Int
+  land_acre_cultivable: Int
+  land_acre_irrigation: Int
+  land_irrigation_type: String
+  user: UserRelateToOneInput
+  crop: CropRelateToOneInput
+  seed: SeedRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input LandHoldingsUpdateInput {
+  id: ID!
+  data: LandHoldingUpdateInput
+}
+
+input LandHoldingCreateInput {
+  land_acre_number: Int
+  land_acre_cultivable: Int
+  land_acre_irrigation: Int
+  land_irrigation_type: String
+  user: UserRelateToOneInput
+  crop: CropRelateToOneInput
+  seed: SeedRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input LandHoldingsCreateInput {
+  data: LandHoldingCreateInput
+}
+
+""" A keystone list """
+type Crop {
+  id: ID!
+  season_type: String
+  crop_name: String
+  land_acre_used: Int
+  average_yeild_per_acre: String
+  new_crop_planned: String
+  user: User
+  seed: Seed
+  landHolding: LandHolding
+  fertPest: FertPest
+  producePlan: ProducePlan
+  marketing: Marketing
+}
+
+input CropWhereInput {
+  AND: [CropWhereInput]
+  OR: [CropWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  season_type: String
+  season_type_not: String
+  season_type_contains: String
+  season_type_not_contains: String
+  season_type_starts_with: String
+  season_type_not_starts_with: String
+  season_type_ends_with: String
+  season_type_not_ends_with: String
+  season_type_i: String
+  season_type_not_i: String
+  season_type_contains_i: String
+  season_type_not_contains_i: String
+  season_type_starts_with_i: String
+  season_type_not_starts_with_i: String
+  season_type_ends_with_i: String
+  season_type_not_ends_with_i: String
+  season_type_in: [String]
+  season_type_not_in: [String]
+  crop_name: String
+  crop_name_not: String
+  crop_name_contains: String
+  crop_name_not_contains: String
+  crop_name_starts_with: String
+  crop_name_not_starts_with: String
+  crop_name_ends_with: String
+  crop_name_not_ends_with: String
+  crop_name_i: String
+  crop_name_not_i: String
+  crop_name_contains_i: String
+  crop_name_not_contains_i: String
+  crop_name_starts_with_i: String
+  crop_name_not_starts_with_i: String
+  crop_name_ends_with_i: String
+  crop_name_not_ends_with_i: String
+  crop_name_in: [String]
+  crop_name_not_in: [String]
+  land_acre_used: Int
+  land_acre_used_not: Int
+  land_acre_used_lt: Int
+  land_acre_used_lte: Int
+  land_acre_used_gt: Int
+  land_acre_used_gte: Int
+  land_acre_used_in: [Int]
+  land_acre_used_not_in: [Int]
+  average_yeild_per_acre: String
+  average_yeild_per_acre_not: String
+  average_yeild_per_acre_contains: String
+  average_yeild_per_acre_not_contains: String
+  average_yeild_per_acre_starts_with: String
+  average_yeild_per_acre_not_starts_with: String
+  average_yeild_per_acre_ends_with: String
+  average_yeild_per_acre_not_ends_with: String
+  average_yeild_per_acre_i: String
+  average_yeild_per_acre_not_i: String
+  average_yeild_per_acre_contains_i: String
+  average_yeild_per_acre_not_contains_i: String
+  average_yeild_per_acre_starts_with_i: String
+  average_yeild_per_acre_not_starts_with_i: String
+  average_yeild_per_acre_ends_with_i: String
+  average_yeild_per_acre_not_ends_with_i: String
+  average_yeild_per_acre_in: [String]
+  average_yeild_per_acre_not_in: [String]
+  new_crop_planned: String
+  new_crop_planned_not: String
+  new_crop_planned_contains: String
+  new_crop_planned_not_contains: String
+  new_crop_planned_starts_with: String
+  new_crop_planned_not_starts_with: String
+  new_crop_planned_ends_with: String
+  new_crop_planned_not_ends_with: String
+  new_crop_planned_i: String
+  new_crop_planned_not_i: String
+  new_crop_planned_contains_i: String
+  new_crop_planned_not_contains_i: String
+  new_crop_planned_starts_with_i: String
+  new_crop_planned_not_starts_with_i: String
+  new_crop_planned_ends_with_i: String
+  new_crop_planned_not_ends_with_i: String
+  new_crop_planned_in: [String]
+  new_crop_planned_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+  seed: SeedWhereInput
+  seed_is_null: Boolean
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  fertPest: FertPestWhereInput
+  fertPest_is_null: Boolean
+  producePlan: ProducePlanWhereInput
+  producePlan_is_null: Boolean
+  marketing: MarketingWhereInput
+  marketing_is_null: Boolean
+}
+
+input CropWhereUniqueInput {
+  id: ID!
+}
+
+enum SortCropsBy {
+  id_ASC
+  id_DESC
+  season_type_ASC
+  season_type_DESC
+  crop_name_ASC
+  crop_name_DESC
+  land_acre_used_ASC
+  land_acre_used_DESC
+  average_yeild_per_acre_ASC
+  average_yeild_per_acre_DESC
+  new_crop_planned_ASC
+  new_crop_planned_DESC
+  user_ASC
+  user_DESC
+  seed_ASC
+  seed_DESC
+  landHolding_ASC
+  landHolding_DESC
+  fertPest_ASC
+  fertPest_DESC
+  producePlan_ASC
+  producePlan_DESC
+  marketing_ASC
+  marketing_DESC
+}
+
+input CropUpdateInput {
+  season_type: String
+  crop_name: String
+  land_acre_used: Int
+  average_yeild_per_acre: String
+  new_crop_planned: String
+  user: UserRelateToOneInput
+  seed: SeedRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input CropsUpdateInput {
+  id: ID!
+  data: CropUpdateInput
+}
+
+input CropCreateInput {
+  season_type: String
+  crop_name: String
+  land_acre_used: Int
+  average_yeild_per_acre: String
+  new_crop_planned: String
+  user: UserRelateToOneInput
+  seed: SeedRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input CropsCreateInput {
+  data: CropCreateInput
+}
+
+""" A keystone list """
+type Seed {
+  id: ID!
+  seed_total_acre: String
+  seed_source_type: String
+  landHolding: LandHolding
+  crop: Crop
+  fertPest: FertPest
+}
+
+input SeedWhereInput {
+  AND: [SeedWhereInput]
+  OR: [SeedWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  seed_total_acre: String
+  seed_total_acre_not: String
+  seed_total_acre_contains: String
+  seed_total_acre_not_contains: String
+  seed_total_acre_starts_with: String
+  seed_total_acre_not_starts_with: String
+  seed_total_acre_ends_with: String
+  seed_total_acre_not_ends_with: String
+  seed_total_acre_i: String
+  seed_total_acre_not_i: String
+  seed_total_acre_contains_i: String
+  seed_total_acre_not_contains_i: String
+  seed_total_acre_starts_with_i: String
+  seed_total_acre_not_starts_with_i: String
+  seed_total_acre_ends_with_i: String
+  seed_total_acre_not_ends_with_i: String
+  seed_total_acre_in: [String]
+  seed_total_acre_not_in: [String]
+  seed_source_type: String
+  seed_source_type_not: String
+  seed_source_type_contains: String
+  seed_source_type_not_contains: String
+  seed_source_type_starts_with: String
+  seed_source_type_not_starts_with: String
+  seed_source_type_ends_with: String
+  seed_source_type_not_ends_with: String
+  seed_source_type_i: String
+  seed_source_type_not_i: String
+  seed_source_type_contains_i: String
+  seed_source_type_not_contains_i: String
+  seed_source_type_starts_with_i: String
+  seed_source_type_not_starts_with_i: String
+  seed_source_type_ends_with_i: String
+  seed_source_type_not_ends_with_i: String
+  seed_source_type_in: [String]
+  seed_source_type_not_in: [String]
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  fertPest: FertPestWhereInput
+  fertPest_is_null: Boolean
+}
+
+input SeedWhereUniqueInput {
+  id: ID!
+}
+
+enum SortSeedsBy {
+  id_ASC
+  id_DESC
+  seed_total_acre_ASC
+  seed_total_acre_DESC
+  seed_source_type_ASC
+  seed_source_type_DESC
+  landHolding_ASC
+  landHolding_DESC
+  crop_ASC
+  crop_DESC
+  fertPest_ASC
+  fertPest_DESC
+}
+
+input SeedUpdateInput {
+  seed_total_acre: String
+  seed_source_type: String
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+}
+
+input SeedsUpdateInput {
+  id: ID!
+  data: SeedUpdateInput
+}
+
+input SeedCreateInput {
+  seed_total_acre: String
+  seed_source_type: String
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  fertPest: FertPestRelateToOneInput
+}
+
+input SeedsCreateInput {
+  data: SeedCreateInput
+}
+
+""" A keystone list """
+type FertPest {
+  id: ID!
+  dap_total_acre_crop: Int
+  urea_total_acre_crop: Int
+  other_total_acre_crop: Int
+  pesticide_total_crop: Int
+  herbicide_total_acre_crop: Int
+  source_type: String
+  user: User
+  landHolding: LandHolding
+  crop: Crop
+  seed: Seed
+}
+
+input FertPestWhereInput {
+  AND: [FertPestWhereInput]
+  OR: [FertPestWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  dap_total_acre_crop: Int
+  dap_total_acre_crop_not: Int
+  dap_total_acre_crop_lt: Int
+  dap_total_acre_crop_lte: Int
+  dap_total_acre_crop_gt: Int
+  dap_total_acre_crop_gte: Int
+  dap_total_acre_crop_in: [Int]
+  dap_total_acre_crop_not_in: [Int]
+  urea_total_acre_crop: Int
+  urea_total_acre_crop_not: Int
+  urea_total_acre_crop_lt: Int
+  urea_total_acre_crop_lte: Int
+  urea_total_acre_crop_gt: Int
+  urea_total_acre_crop_gte: Int
+  urea_total_acre_crop_in: [Int]
+  urea_total_acre_crop_not_in: [Int]
+  other_total_acre_crop: Int
+  other_total_acre_crop_not: Int
+  other_total_acre_crop_lt: Int
+  other_total_acre_crop_lte: Int
+  other_total_acre_crop_gt: Int
+  other_total_acre_crop_gte: Int
+  other_total_acre_crop_in: [Int]
+  other_total_acre_crop_not_in: [Int]
+  pesticide_total_crop: Int
+  pesticide_total_crop_not: Int
+  pesticide_total_crop_lt: Int
+  pesticide_total_crop_lte: Int
+  pesticide_total_crop_gt: Int
+  pesticide_total_crop_gte: Int
+  pesticide_total_crop_in: [Int]
+  pesticide_total_crop_not_in: [Int]
+  herbicide_total_acre_crop: Int
+  herbicide_total_acre_crop_not: Int
+  herbicide_total_acre_crop_lt: Int
+  herbicide_total_acre_crop_lte: Int
+  herbicide_total_acre_crop_gt: Int
+  herbicide_total_acre_crop_gte: Int
+  herbicide_total_acre_crop_in: [Int]
+  herbicide_total_acre_crop_not_in: [Int]
+  source_type: String
+  source_type_not: String
+  source_type_contains: String
+  source_type_not_contains: String
+  source_type_starts_with: String
+  source_type_not_starts_with: String
+  source_type_ends_with: String
+  source_type_not_ends_with: String
+  source_type_i: String
+  source_type_not_i: String
+  source_type_contains_i: String
+  source_type_not_contains_i: String
+  source_type_starts_with_i: String
+  source_type_not_starts_with_i: String
+  source_type_ends_with_i: String
+  source_type_not_ends_with_i: String
+  source_type_in: [String]
+  source_type_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  seed: SeedWhereInput
+  seed_is_null: Boolean
+}
+
+input FertPestWhereUniqueInput {
+  id: ID!
+}
+
+enum SortFertPestsBy {
+  id_ASC
+  id_DESC
+  dap_total_acre_crop_ASC
+  dap_total_acre_crop_DESC
+  urea_total_acre_crop_ASC
+  urea_total_acre_crop_DESC
+  other_total_acre_crop_ASC
+  other_total_acre_crop_DESC
+  pesticide_total_crop_ASC
+  pesticide_total_crop_DESC
+  herbicide_total_acre_crop_ASC
+  herbicide_total_acre_crop_DESC
+  source_type_ASC
+  source_type_DESC
+  user_ASC
+  user_DESC
+  landHolding_ASC
+  landHolding_DESC
+  crop_ASC
+  crop_DESC
+  seed_ASC
+  seed_DESC
+}
+
+input FertPestUpdateInput {
+  dap_total_acre_crop: Int
+  urea_total_acre_crop: Int
+  other_total_acre_crop: Int
+  pesticide_total_crop: Int
+  herbicide_total_acre_crop: Int
+  source_type: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  seed: SeedRelateToOneInput
+}
+
+input FertPestsUpdateInput {
+  id: ID!
+  data: FertPestUpdateInput
+}
+
+input FertPestCreateInput {
+  dap_total_acre_crop: Int
+  urea_total_acre_crop: Int
+  other_total_acre_crop: Int
+  pesticide_total_crop: Int
+  herbicide_total_acre_crop: Int
+  source_type: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  seed: SeedRelateToOneInput
+}
+
+input FertPestsCreateInput {
+  data: FertPestCreateInput
+}
+
+""" A keystone list """
+type ProducePlan {
+  id: ID!
+  percentage_consumption: Int
+  percent_sale_raw: Int
+  percentage_sale_primary_processed: Int
+  percentage_seed: Int
+  primary_processing_types: String
+  primary_processing_products: String
+  user: User
+  landHolding: LandHolding
+  crop: Crop
+  marketing: Marketing
+}
+
+input ProducePlanWhereInput {
+  AND: [ProducePlanWhereInput]
+  OR: [ProducePlanWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  percentage_consumption: Int
+  percentage_consumption_not: Int
+  percentage_consumption_lt: Int
+  percentage_consumption_lte: Int
+  percentage_consumption_gt: Int
+  percentage_consumption_gte: Int
+  percentage_consumption_in: [Int]
+  percentage_consumption_not_in: [Int]
+  percent_sale_raw: Int
+  percent_sale_raw_not: Int
+  percent_sale_raw_lt: Int
+  percent_sale_raw_lte: Int
+  percent_sale_raw_gt: Int
+  percent_sale_raw_gte: Int
+  percent_sale_raw_in: [Int]
+  percent_sale_raw_not_in: [Int]
+  percentage_sale_primary_processed: Int
+  percentage_sale_primary_processed_not: Int
+  percentage_sale_primary_processed_lt: Int
+  percentage_sale_primary_processed_lte: Int
+  percentage_sale_primary_processed_gt: Int
+  percentage_sale_primary_processed_gte: Int
+  percentage_sale_primary_processed_in: [Int]
+  percentage_sale_primary_processed_not_in: [Int]
+  percentage_seed: Int
+  percentage_seed_not: Int
+  percentage_seed_lt: Int
+  percentage_seed_lte: Int
+  percentage_seed_gt: Int
+  percentage_seed_gte: Int
+  percentage_seed_in: [Int]
+  percentage_seed_not_in: [Int]
+  primary_processing_types: String
+  primary_processing_types_not: String
+  primary_processing_types_contains: String
+  primary_processing_types_not_contains: String
+  primary_processing_types_starts_with: String
+  primary_processing_types_not_starts_with: String
+  primary_processing_types_ends_with: String
+  primary_processing_types_not_ends_with: String
+  primary_processing_types_i: String
+  primary_processing_types_not_i: String
+  primary_processing_types_contains_i: String
+  primary_processing_types_not_contains_i: String
+  primary_processing_types_starts_with_i: String
+  primary_processing_types_not_starts_with_i: String
+  primary_processing_types_ends_with_i: String
+  primary_processing_types_not_ends_with_i: String
+  primary_processing_types_in: [String]
+  primary_processing_types_not_in: [String]
+  primary_processing_products: String
+  primary_processing_products_not: String
+  primary_processing_products_contains: String
+  primary_processing_products_not_contains: String
+  primary_processing_products_starts_with: String
+  primary_processing_products_not_starts_with: String
+  primary_processing_products_ends_with: String
+  primary_processing_products_not_ends_with: String
+  primary_processing_products_i: String
+  primary_processing_products_not_i: String
+  primary_processing_products_contains_i: String
+  primary_processing_products_not_contains_i: String
+  primary_processing_products_starts_with_i: String
+  primary_processing_products_not_starts_with_i: String
+  primary_processing_products_ends_with_i: String
+  primary_processing_products_not_ends_with_i: String
+  primary_processing_products_in: [String]
+  primary_processing_products_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  marketing: MarketingWhereInput
+  marketing_is_null: Boolean
+}
+
+input ProducePlanWhereUniqueInput {
+  id: ID!
+}
+
+enum SortProducePlansBy {
+  id_ASC
+  id_DESC
+  percentage_consumption_ASC
+  percentage_consumption_DESC
+  percent_sale_raw_ASC
+  percent_sale_raw_DESC
+  percentage_sale_primary_processed_ASC
+  percentage_sale_primary_processed_DESC
+  percentage_seed_ASC
+  percentage_seed_DESC
+  primary_processing_types_ASC
+  primary_processing_types_DESC
+  primary_processing_products_ASC
+  primary_processing_products_DESC
+  user_ASC
+  user_DESC
+  landHolding_ASC
+  landHolding_DESC
+  crop_ASC
+  crop_DESC
+  marketing_ASC
+  marketing_DESC
+}
+
+input ProducePlanUpdateInput {
+  percentage_consumption: Int
+  percent_sale_raw: Int
+  percentage_sale_primary_processed: Int
+  percentage_seed: Int
+  primary_processing_types: String
+  primary_processing_products: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input ProducePlansUpdateInput {
+  id: ID!
+  data: ProducePlanUpdateInput
+}
+
+input ProducePlanCreateInput {
+  percentage_consumption: Int
+  percent_sale_raw: Int
+  percentage_sale_primary_processed: Int
+  percentage_seed: Int
+  primary_processing_types: String
+  primary_processing_products: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  marketing: MarketingRelateToOneInput
+}
+
+input ProducePlansCreateInput {
+  data: ProducePlanCreateInput
+}
+
+""" A keystone list """
+type Marketing {
+  id: ID!
+  mode_sale_type: String
+  additional_amount_processed_product: String
+  user: User
+  landHolding: LandHolding
+  crop: Crop
+  producePlan: ProducePlan
+}
+
+input MarketingWhereInput {
+  AND: [MarketingWhereInput]
+  OR: [MarketingWhereInput]
+  id: ID
+  id_not: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  mode_sale_type: String
+  mode_sale_type_not: String
+  mode_sale_type_contains: String
+  mode_sale_type_not_contains: String
+  mode_sale_type_starts_with: String
+  mode_sale_type_not_starts_with: String
+  mode_sale_type_ends_with: String
+  mode_sale_type_not_ends_with: String
+  mode_sale_type_i: String
+  mode_sale_type_not_i: String
+  mode_sale_type_contains_i: String
+  mode_sale_type_not_contains_i: String
+  mode_sale_type_starts_with_i: String
+  mode_sale_type_not_starts_with_i: String
+  mode_sale_type_ends_with_i: String
+  mode_sale_type_not_ends_with_i: String
+  mode_sale_type_in: [String]
+  mode_sale_type_not_in: [String]
+  additional_amount_processed_product: String
+  additional_amount_processed_product_not: String
+  additional_amount_processed_product_contains: String
+  additional_amount_processed_product_not_contains: String
+  additional_amount_processed_product_starts_with: String
+  additional_amount_processed_product_not_starts_with: String
+  additional_amount_processed_product_ends_with: String
+  additional_amount_processed_product_not_ends_with: String
+  additional_amount_processed_product_i: String
+  additional_amount_processed_product_not_i: String
+  additional_amount_processed_product_contains_i: String
+  additional_amount_processed_product_not_contains_i: String
+  additional_amount_processed_product_starts_with_i: String
+  additional_amount_processed_product_not_starts_with_i: String
+  additional_amount_processed_product_ends_with_i: String
+  additional_amount_processed_product_not_ends_with_i: String
+  additional_amount_processed_product_in: [String]
+  additional_amount_processed_product_not_in: [String]
+  user: UserWhereInput
+  user_is_null: Boolean
+  landHolding: LandHoldingWhereInput
+  landHolding_is_null: Boolean
+  crop: CropWhereInput
+  crop_is_null: Boolean
+  producePlan: ProducePlanWhereInput
+  producePlan_is_null: Boolean
+}
+
+input MarketingWhereUniqueInput {
+  id: ID!
+}
+
+enum SortMarketingsBy {
+  id_ASC
+  id_DESC
+  mode_sale_type_ASC
+  mode_sale_type_DESC
+  additional_amount_processed_product_ASC
+  additional_amount_processed_product_DESC
+  user_ASC
+  user_DESC
+  landHolding_ASC
+  landHolding_DESC
+  crop_ASC
+  crop_DESC
+  producePlan_ASC
+  producePlan_DESC
+}
+
+input MarketingUpdateInput {
+  mode_sale_type: String
+  additional_amount_processed_product: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+}
+
+input MarketingsUpdateInput {
+  id: ID!
+  data: MarketingUpdateInput
+}
+
+input MarketingCreateInput {
+  mode_sale_type: String
+  additional_amount_processed_product: String
+  user: UserRelateToOneInput
+  landHolding: LandHoldingRelateToOneInput
+  crop: CropRelateToOneInput
+  producePlan: ProducePlanRelateToOneInput
+}
+
+input MarketingsCreateInput {
+  data: MarketingCreateInput
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+
+type _ListAccess {
+  """
+  Access Control settings for the currently logged in (or anonymous)
+  user when performing 'create' operations.
+  NOTE: 'create' can only return a Boolean.
+  It is not possible to specify a declarative Where clause for this
+  operation
+  """
+  create: Boolean
+
+  """
+  Access Control settings for the currently logged in (or anonymous)
+  user when performing 'read' operations.
+  """
+  read: JSON
+
+  """
+  Access Control settings for the currently logged in (or anonymous)
+  user when performing 'update' operations.
+  """
+  update: JSON
+
+  """
+  Access Control settings for the currently logged in (or anonymous)
+  user when performing 'delete' operations.
+  """
+  delete: JSON
+
+  """
+  Access Control settings for the currently logged in (or anonymous)
+  user when performing 'auth' operations.
+  """
+  auth: JSON
+}
+
+type _ListQueries {
+  """Single-item query name"""
+  item: String
+
+  """All-items query name"""
+  list: String
+
+  """List metadata query name"""
+  meta: String
+}
+
+type _ListMutations {
+  """Create mutation name"""
+  create: String
+
+  """Create many mutation name"""
+  createMany: String
+
+  """Update mutation name"""
+  update: String
+
+  """Update many mutation name"""
+  updateMany: String
+
+  """Delete mutation name"""
+  delete: String
+
+  """Delete many mutation name"""
+  deleteMany: String
+}
+
+type _ListInputTypes {
+  """Input type for matching multiple items"""
+  whereInput: String
+
+  """Input type for matching a unique item"""
+  whereUniqueInput: String
+
+  """Create mutation input type name"""
+  createInput: String
+
+  """Create many mutation input type name"""
+  createManyInput: String
+
+  """Update mutation name input"""
+  updateInput: String
+
+  """Update many mutation name input"""
+  updateManyInput: String
+}
+
+type _ListSchemaFields {
+  """The path of the field in its list"""
+  path: String
+
+  """The name of the field in its list"""
+  name: String @deprecated(reason: "Use `path` instead")
+
+  """The field type (ie, Checkbox, Text, etc)"""
+  type: String
+}
+
+type _ListSchemaRelatedFields {
+  """The typename as used in GraphQL queries"""
+  type: String
+
+  """A list of GraphQL field names"""
+  fields: [String]
+}
+
+type _ListSchema {
+  """The typename as used in GraphQL queries"""
+  type: String
+
+  """
+  Top level GraphQL query names which either return this type, or
+  provide aggregate information about this type
+  """
+  queries: _ListQueries
+
+  """Top-level GraphQL mutation names"""
+  mutations: _ListMutations
+
+  """Top-level GraphQL input types"""
+  inputTypes: _ListInputTypes
+
+  """Information about fields defined on this list"""
+  fields(where: _ListSchemaFieldsInput): [_ListSchemaFields]
+
+  """
+  Information about fields on other types which return this type, or
+  provide aggregate information about this type
+  """
+  relatedFields: [_ListSchemaRelatedFields]
+}
+
+type _ListMeta {
+  """The Keystone list key"""
+  key: String
+
+  """The Keystone List name"""
+  name: String @deprecated(reason: "Use `key` instead")
+
+  """The list's user-facing description"""
+  description: String
+
+  """The list's display name in the Admin UI"""
+  label: String
+
+  """The list's singular display name"""
+  singular: String
+
+  """The list's plural display name"""
+  plural: String
+
+  """The list's data path"""
+  path: String
+
+  """Access control configuration for the currently authenticated request"""
+  access: _ListAccess
+
+  """Information on the generated GraphQL schema"""
+  schema: _ListSchema
+}
+
+type _QueryMeta {
+  count: Int
+}
+
+input _ksListsMetaInput {
+  key: String
+
+  """Whether this is an auxiliary helper list"""
+  auxiliary: Boolean
+}
+
+input _ListSchemaFieldsInput {
+  type: String
+}
+
+type Query {
+  """ Search for all User items which match the where clause. """
+  allUsers(where: UserWhereInput, search: String, sortBy: [SortUsersBy!], orderBy: String, first: Int, skip: Int): [User]
+
+  """ Search for the User item with the matching ID. """
+  User(where: UserWhereUniqueInput!): User
+
+  """ Perform a meta-query on all User items which match the where clause. """
+  _allUsersMeta(where: UserWhereInput, search: String, sortBy: [SortUsersBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the User list. """
+  _UsersMeta: _ListMeta
+
+  """ Search for all Product items which match the where clause. """
+  allProducts(where: ProductWhereInput, search: String, sortBy: [SortProductsBy!], orderBy: String, first: Int, skip: Int): [Product]
+
+  """ Search for the Product item with the matching ID. """
+  Product(where: ProductWhereUniqueInput!): Product
+
+  """ Perform a meta-query on all Product items which match the where clause. 
+  """
+  _allProductsMeta(where: ProductWhereInput, search: String, sortBy: [SortProductsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Product list. """
+  _ProductsMeta: _ListMeta
+
+  """ Search for all ProductImage items which match the where clause. """
+  allProductImages(where: ProductImageWhereInput, search: String, sortBy: [SortProductImagesBy!], orderBy: String, first: Int, skip: Int): [ProductImage]
+
+  """ Search for the ProductImage item with the matching ID. """
+  ProductImage(where: ProductImageWhereUniqueInput!): ProductImage
+
+  """ Perform a meta-query on all ProductImage items which match the where clause. 
+  """
+  _allProductImagesMeta(where: ProductImageWhereInput, search: String, sortBy: [SortProductImagesBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the ProductImage list. """
+  _ProductImagesMeta: _ListMeta
+
+  """ Search for all CartItem items which match the where clause. """
+  allCartItems(where: CartItemWhereInput, search: String, sortBy: [SortCartItemsBy!], orderBy: String, first: Int, skip: Int): [CartItem]
+
+  """ Search for the CartItem item with the matching ID. """
+  CartItem(where: CartItemWhereUniqueInput!): CartItem
+
+  """ Perform a meta-query on all CartItem items which match the where clause. 
+  """
+  _allCartItemsMeta(where: CartItemWhereInput, search: String, sortBy: [SortCartItemsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the CartItem list. """
+  _CartItemsMeta: _ListMeta
+
+  """ Search for all OrderItem items which match the where clause. """
+  allOrderItems(where: OrderItemWhereInput, search: String, sortBy: [SortOrderItemsBy!], orderBy: String, first: Int, skip: Int): [OrderItem]
+
+  """ Search for the OrderItem item with the matching ID. """
+  OrderItem(where: OrderItemWhereUniqueInput!): OrderItem
+
+  """ Perform a meta-query on all OrderItem items which match the where clause. 
+  """
+  _allOrderItemsMeta(where: OrderItemWhereInput, search: String, sortBy: [SortOrderItemsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the OrderItem list. """
+  _OrderItemsMeta: _ListMeta
+
+  """ Search for all Order items which match the where clause. """
+  allOrders(where: OrderWhereInput, search: String, sortBy: [SortOrdersBy!], orderBy: String, first: Int, skip: Int): [Order]
+
+  """ Search for the Order item with the matching ID. """
+  Order(where: OrderWhereUniqueInput!): Order
+
+  """ Perform a meta-query on all Order items which match the where clause. 
+  """
+  _allOrdersMeta(where: OrderWhereInput, search: String, sortBy: [SortOrdersBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Order list. """
+  _OrdersMeta: _ListMeta
+
+  """ Search for all Role items which match the where clause. """
+  allRoles(where: RoleWhereInput, search: String, sortBy: [SortRolesBy!], orderBy: String, first: Int, skip: Int): [Role]
+
+  """ Search for the Role item with the matching ID. """
+  Role(where: RoleWhereUniqueInput!): Role
+
+  """ Perform a meta-query on all Role items which match the where clause. """
+  _allRolesMeta(where: RoleWhereInput, search: String, sortBy: [SortRolesBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Role list. """
+  _RolesMeta: _ListMeta
+
+  """ Search for all UserImage items which match the where clause. """
+  allUserImages(where: UserImageWhereInput, search: String, sortBy: [SortUserImagesBy!], orderBy: String, first: Int, skip: Int): [UserImage]
+
+  """ Search for the UserImage item with the matching ID. """
+  UserImage(where: UserImageWhereUniqueInput!): UserImage
+
+  """ Perform a meta-query on all UserImage items which match the where clause. 
+  """
+  _allUserImagesMeta(where: UserImageWhereInput, search: String, sortBy: [SortUserImagesBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the UserImage list. """
+  _UserImagesMeta: _ListMeta
+
+  """ Search for all LandHolding items which match the where clause. """
+  allLandHoldings(where: LandHoldingWhereInput, search: String, sortBy: [SortLandHoldingsBy!], orderBy: String, first: Int, skip: Int): [LandHolding]
+
+  """ Search for the LandHolding item with the matching ID. """
+  LandHolding(where: LandHoldingWhereUniqueInput!): LandHolding
+
+  """ Perform a meta-query on all LandHolding items which match the where clause. 
+  """
+  _allLandHoldingsMeta(where: LandHoldingWhereInput, search: String, sortBy: [SortLandHoldingsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the LandHolding list. """
+  _LandHoldingsMeta: _ListMeta
+
+  """ Search for all Crop items which match the where clause. """
+  allCrops(where: CropWhereInput, search: String, sortBy: [SortCropsBy!], orderBy: String, first: Int, skip: Int): [Crop]
+
+  """ Search for the Crop item with the matching ID. """
+  Crop(where: CropWhereUniqueInput!): Crop
+
+  """ Perform a meta-query on all Crop items which match the where clause. """
+  _allCropsMeta(where: CropWhereInput, search: String, sortBy: [SortCropsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Crop list. """
+  _CropsMeta: _ListMeta
+
+  """ Search for all Seed items which match the where clause. """
+  allSeeds(where: SeedWhereInput, search: String, sortBy: [SortSeedsBy!], orderBy: String, first: Int, skip: Int): [Seed]
+
+  """ Search for the Seed item with the matching ID. """
+  Seed(where: SeedWhereUniqueInput!): Seed
+
+  """ Perform a meta-query on all Seed items which match the where clause. """
+  _allSeedsMeta(where: SeedWhereInput, search: String, sortBy: [SortSeedsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Seed list. """
+  _SeedsMeta: _ListMeta
+
+  """ Search for all FertPest items which match the where clause. """
+  allFertPests(where: FertPestWhereInput, search: String, sortBy: [SortFertPestsBy!], orderBy: String, first: Int, skip: Int): [FertPest]
+
+  """ Search for the FertPest item with the matching ID. """
+  FertPest(where: FertPestWhereUniqueInput!): FertPest
+
+  """ Perform a meta-query on all FertPest items which match the where clause. 
+  """
+  _allFertPestsMeta(where: FertPestWhereInput, search: String, sortBy: [SortFertPestsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the FertPest list. """
+  _FertPestsMeta: _ListMeta
+
+  """ Search for all ProducePlan items which match the where clause. """
+  allProducePlans(where: ProducePlanWhereInput, search: String, sortBy: [SortProducePlansBy!], orderBy: String, first: Int, skip: Int): [ProducePlan]
+
+  """ Search for the ProducePlan item with the matching ID. """
+  ProducePlan(where: ProducePlanWhereUniqueInput!): ProducePlan
+
+  """ Perform a meta-query on all ProducePlan items which match the where clause. 
+  """
+  _allProducePlansMeta(where: ProducePlanWhereInput, search: String, sortBy: [SortProducePlansBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the ProducePlan list. """
+  _ProducePlansMeta: _ListMeta
+
+  """ Search for all Marketing items which match the where clause. """
+  allMarketings(where: MarketingWhereInput, search: String, sortBy: [SortMarketingsBy!], orderBy: String, first: Int, skip: Int): [Marketing]
+
+  """ Search for the Marketing item with the matching ID. """
+  Marketing(where: MarketingWhereUniqueInput!): Marketing
+
+  """ Perform a meta-query on all Marketing items which match the where clause. 
+  """
+  _allMarketingsMeta(where: MarketingWhereInput, search: String, sortBy: [SortMarketingsBy!], orderBy: String, first: Int, skip: Int): _QueryMeta
+
+  """ Retrieve the meta-data for the Marketing list. """
+  _MarketingsMeta: _ListMeta
+
+  """ Retrieve the meta-data for all lists. """
+  _ksListsMeta(where: _ksListsMetaInput): [_ListMeta]
+
+  """The version of the Keystone application serving this API."""
+  appVersion: String
+  authenticatedItem: AuthenticatedItem
+  validateUserPasswordResetToken(email: String!, token: String!): ValidateUserPasswordResetTokenResult
+  keystone: KeystoneMeta!
+}
+
+type Mutation {
+  """ Create a single User item. """
+  createUser(data: UserCreateInput): User
+
+  """ Create multiple User items. """
+  createUsers(data: [UsersCreateInput]): [User]
+
+  """ Update a single User item by ID. """
+  updateUser(id: ID!, data: UserUpdateInput): User
+
+  """ Update multiple User items by ID. """
+  updateUsers(data: [UsersUpdateInput]): [User]
+
+  """ Delete a single User item by ID. """
+  deleteUser(id: ID!): User
+
+  """ Delete multiple User items by ID. """
+  deleteUsers(ids: [ID!]): [User]
+
+  """ Create a single Product item. """
+  createProduct(data: ProductCreateInput): Product
+
+  """ Create multiple Product items. """
+  createProducts(data: [ProductsCreateInput]): [Product]
+
+  """ Update a single Product item by ID. """
+  updateProduct(id: ID!, data: ProductUpdateInput): Product
+
+  """ Update multiple Product items by ID. """
+  updateProducts(data: [ProductsUpdateInput]): [Product]
+
+  """ Delete a single Product item by ID. """
+  deleteProduct(id: ID!): Product
+
+  """ Delete multiple Product items by ID. """
+  deleteProducts(ids: [ID!]): [Product]
+
+  """ Create a single ProductImage item. """
+  createProductImage(data: ProductImageCreateInput): ProductImage
+
+  """ Create multiple ProductImage items. """
+  createProductImages(data: [ProductImagesCreateInput]): [ProductImage]
+
+  """ Update a single ProductImage item by ID. """
+  updateProductImage(id: ID!, data: ProductImageUpdateInput): ProductImage
+
+  """ Update multiple ProductImage items by ID. """
+  updateProductImages(data: [ProductImagesUpdateInput]): [ProductImage]
+
+  """ Delete a single ProductImage item by ID. """
+  deleteProductImage(id: ID!): ProductImage
+
+  """ Delete multiple ProductImage items by ID. """
+  deleteProductImages(ids: [ID!]): [ProductImage]
+
+  """ Create a single CartItem item. """
+  createCartItem(data: CartItemCreateInput): CartItem
+
+  """ Create multiple CartItem items. """
+  createCartItems(data: [CartItemsCreateInput]): [CartItem]
+
+  """ Update a single CartItem item by ID. """
+  updateCartItem(id: ID!, data: CartItemUpdateInput): CartItem
+
+  """ Update multiple CartItem items by ID. """
+  updateCartItems(data: [CartItemsUpdateInput]): [CartItem]
+
+  """ Delete a single CartItem item by ID. """
+  deleteCartItem(id: ID!): CartItem
+
+  """ Delete multiple CartItem items by ID. """
+  deleteCartItems(ids: [ID!]): [CartItem]
+
+  """ Create a single OrderItem item. """
+  createOrderItem(data: OrderItemCreateInput): OrderItem
+
+  """ Create multiple OrderItem items. """
+  createOrderItems(data: [OrderItemsCreateInput]): [OrderItem]
+
+  """ Update a single OrderItem item by ID. """
+  updateOrderItem(id: ID!, data: OrderItemUpdateInput): OrderItem
+
+  """ Update multiple OrderItem items by ID. """
+  updateOrderItems(data: [OrderItemsUpdateInput]): [OrderItem]
+
+  """ Delete a single OrderItem item by ID. """
+  deleteOrderItem(id: ID!): OrderItem
+
+  """ Delete multiple OrderItem items by ID. """
+  deleteOrderItems(ids: [ID!]): [OrderItem]
+
+  """ Create a single Order item. """
+  createOrder(data: OrderCreateInput): Order
+
+  """ Create multiple Order items. """
+  createOrders(data: [OrdersCreateInput]): [Order]
+
+  """ Update a single Order item by ID. """
+  updateOrder(id: ID!, data: OrderUpdateInput): Order
+
+  """ Update multiple Order items by ID. """
+  updateOrders(data: [OrdersUpdateInput]): [Order]
+
+  """ Delete a single Order item by ID. """
+  deleteOrder(id: ID!): Order
+
+  """ Delete multiple Order items by ID. """
+  deleteOrders(ids: [ID!]): [Order]
+
+  """ Create a single Role item. """
+  createRole(data: RoleCreateInput): Role
+
+  """ Create multiple Role items. """
+  createRoles(data: [RolesCreateInput]): [Role]
+
+  """ Update a single Role item by ID. """
+  updateRole(id: ID!, data: RoleUpdateInput): Role
+
+  """ Update multiple Role items by ID. """
+  updateRoles(data: [RolesUpdateInput]): [Role]
+
+  """ Delete a single Role item by ID. """
+  deleteRole(id: ID!): Role
+
+  """ Delete multiple Role items by ID. """
+  deleteRoles(ids: [ID!]): [Role]
+
+  """ Create a single UserImage item. """
+  createUserImage(data: UserImageCreateInput): UserImage
+
+  """ Create multiple UserImage items. """
+  createUserImages(data: [UserImagesCreateInput]): [UserImage]
+
+  """ Update a single UserImage item by ID. """
+  updateUserImage(id: ID!, data: UserImageUpdateInput): UserImage
+
+  """ Update multiple UserImage items by ID. """
+  updateUserImages(data: [UserImagesUpdateInput]): [UserImage]
+
+  """ Delete a single UserImage item by ID. """
+  deleteUserImage(id: ID!): UserImage
+
+  """ Delete multiple UserImage items by ID. """
+  deleteUserImages(ids: [ID!]): [UserImage]
+
+  """ Create a single LandHolding item. """
+  createLandHolding(data: LandHoldingCreateInput): LandHolding
+
+  """ Create multiple LandHolding items. """
+  createLandHoldings(data: [LandHoldingsCreateInput]): [LandHolding]
+
+  """ Update a single LandHolding item by ID. """
+  updateLandHolding(id: ID!, data: LandHoldingUpdateInput): LandHolding
+
+  """ Update multiple LandHolding items by ID. """
+  updateLandHoldings(data: [LandHoldingsUpdateInput]): [LandHolding]
+
+  """ Delete a single LandHolding item by ID. """
+  deleteLandHolding(id: ID!): LandHolding
+
+  """ Delete multiple LandHolding items by ID. """
+  deleteLandHoldings(ids: [ID!]): [LandHolding]
+
+  """ Create a single Crop item. """
+  createCrop(data: CropCreateInput): Crop
+
+  """ Create multiple Crop items. """
+  createCrops(data: [CropsCreateInput]): [Crop]
+
+  """ Update a single Crop item by ID. """
+  updateCrop(id: ID!, data: CropUpdateInput): Crop
+
+  """ Update multiple Crop items by ID. """
+  updateCrops(data: [CropsUpdateInput]): [Crop]
+
+  """ Delete a single Crop item by ID. """
+  deleteCrop(id: ID!): Crop
+
+  """ Delete multiple Crop items by ID. """
+  deleteCrops(ids: [ID!]): [Crop]
+
+  """ Create a single Seed item. """
+  createSeed(data: SeedCreateInput): Seed
+
+  """ Create multiple Seed items. """
+  createSeeds(data: [SeedsCreateInput]): [Seed]
+
+  """ Update a single Seed item by ID. """
+  updateSeed(id: ID!, data: SeedUpdateInput): Seed
+
+  """ Update multiple Seed items by ID. """
+  updateSeeds(data: [SeedsUpdateInput]): [Seed]
+
+  """ Delete a single Seed item by ID. """
+  deleteSeed(id: ID!): Seed
+
+  """ Delete multiple Seed items by ID. """
+  deleteSeeds(ids: [ID!]): [Seed]
+
+  """ Create a single FertPest item. """
+  createFertPest(data: FertPestCreateInput): FertPest
+
+  """ Create multiple FertPest items. """
+  createFertPests(data: [FertPestsCreateInput]): [FertPest]
+
+  """ Update a single FertPest item by ID. """
+  updateFertPest(id: ID!, data: FertPestUpdateInput): FertPest
+
+  """ Update multiple FertPest items by ID. """
+  updateFertPests(data: [FertPestsUpdateInput]): [FertPest]
+
+  """ Delete a single FertPest item by ID. """
+  deleteFertPest(id: ID!): FertPest
+
+  """ Delete multiple FertPest items by ID. """
+  deleteFertPests(ids: [ID!]): [FertPest]
+
+  """ Create a single ProducePlan item. """
+  createProducePlan(data: ProducePlanCreateInput): ProducePlan
+
+  """ Create multiple ProducePlan items. """
+  createProducePlans(data: [ProducePlansCreateInput]): [ProducePlan]
+
+  """ Update a single ProducePlan item by ID. """
+  updateProducePlan(id: ID!, data: ProducePlanUpdateInput): ProducePlan
+
+  """ Update multiple ProducePlan items by ID. """
+  updateProducePlans(data: [ProducePlansUpdateInput]): [ProducePlan]
+
+  """ Delete a single ProducePlan item by ID. """
+  deleteProducePlan(id: ID!): ProducePlan
+
+  """ Delete multiple ProducePlan items by ID. """
+  deleteProducePlans(ids: [ID!]): [ProducePlan]
+
+  """ Create a single Marketing item. """
+  createMarketing(data: MarketingCreateInput): Marketing
+
+  """ Create multiple Marketing items. """
+  createMarketings(data: [MarketingsCreateInput]): [Marketing]
+
+  """ Update a single Marketing item by ID. """
+  updateMarketing(id: ID!, data: MarketingUpdateInput): Marketing
+
+  """ Update multiple Marketing items by ID. """
+  updateMarketings(data: [MarketingsUpdateInput]): [Marketing]
+
+  """ Delete a single Marketing item by ID. """
+  deleteMarketing(id: ID!): Marketing
+
+  """ Delete multiple Marketing items by ID. """
+  deleteMarketings(ids: [ID!]): [Marketing]
+  authenticateUserWithPassword(email: String!, password: String!): UserAuthenticationWithPasswordResult!
+  createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
+  sendUserPasswordResetLink(email: String!): SendUserPasswordResetLinkResult
+  redeemUserPasswordResetToken(email: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
+  addToCart(productId: ID): CartItem
+  checkout(token: String!): Order
+  endSession: Boolean!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+union AuthenticatedItem = User
+
+union UserAuthenticationWithPasswordResult = UserAuthenticationWithPasswordSuccess | UserAuthenticationWithPasswordFailure
+
+type UserAuthenticationWithPasswordSuccess {
+  sessionToken: String!
+  item: User!
+}
+
+type UserAuthenticationWithPasswordFailure {
+  code: PasswordAuthErrorCode!
+  message: String!
+}
+
+enum PasswordAuthErrorCode {
+  FAILURE
+  IDENTITY_NOT_FOUND
+  SECRET_NOT_SET
+  MULTIPLE_IDENTITY_MATCHES
+  SECRET_MISMATCH
+}
+
+input CreateInitialUserInput {
+  name: String
+  email: String
+  password: String
+}
+
+type SendUserPasswordResetLinkResult {
+  code: PasswordResetRequestErrorCode!
+  message: String!
+}
+
+enum PasswordResetRequestErrorCode {
+  IDENTITY_NOT_FOUND
+  MULTIPLE_IDENTITY_MATCHES
+}
+
+type ValidateUserPasswordResetTokenResult {
+  code: PasswordResetRedemptionErrorCode!
+  message: String!
+}
+
+type RedeemUserPasswordResetTokenResult {
+  code: PasswordResetRedemptionErrorCode!
+  message: String!
+}
+
+enum PasswordResetRedemptionErrorCode {
+  FAILURE
+  IDENTITY_NOT_FOUND
+  MULTIPLE_IDENTITY_MATCHES
+  TOKEN_NOT_SET
+  TOKEN_MISMATCH
+  TOKEN_EXPIRED
+  TOKEN_REDEEMED
+}
+
+type KeystoneMeta {
+  adminMeta: KeystoneAdminMeta!
+}
+
+type KeystoneAdminMeta {
+  enableSignout: Boolean!
+  enableSessionItem: Boolean!
+  lists: [KeystoneAdminUIListMeta!]!
+  list(key: String!): KeystoneAdminUIListMeta
+}
+
+type KeystoneAdminUIListMeta {
+  key: String!
+  itemQueryName: String!
+  listQueryName: String!
+  hideCreate: Boolean!
+  hideDelete: Boolean!
+  path: String!
+  label: String!
+  singular: String!
+  plural: String!
+  description: String
+  initialColumns: [String!]!
+  pageSize: Int!
+  labelField: String!
+  fields: [KeystoneAdminUIFieldMeta!]!
+  initialSort: KeystoneAdminUISort
+  isHidden: Boolean!
+}
+
+type KeystoneAdminUISort {
+  field: String!
+  direction: KeystoneAdminUISortDirection!
+}
+
+type KeystoneAdminUIFieldMeta {
+  path: String!
+  label: String!
+  isOrderable: Boolean!
+  fieldMeta: JSON
+  viewsHash: String!
+  customViewsHash: String
+  createView: KeystoneAdminUIFieldMetaCreateView!
+  listView: KeystoneAdminUIFieldMetaListView!
+  itemView(id: ID!): KeystoneAdminUIFieldMetaItemView
+}
+
+type KeystoneAdminUIFieldMetaCreateView {
+  fieldMode: KeystoneAdminUIFieldMetaCreateViewFieldMode!
+}
+
+type KeystoneAdminUIFieldMetaListView {
+  fieldMode: KeystoneAdminUIFieldMetaListViewFieldMode!
+}
+
+type KeystoneAdminUIFieldMetaItemView {
+  fieldMode: KeystoneAdminUIFieldMetaItemViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaCreateViewFieldMode {
+  edit
+  hidden
+}
+
+enum KeystoneAdminUIFieldMetaListViewFieldMode {
+  read
+  hidden
+}
+
+enum KeystoneAdminUIFieldMetaItemViewFieldMode {
+  edit
+  read
+  hidden
+}
+
+enum KeystoneAdminUISortDirection {
+  ASC
+  DESC
+}
